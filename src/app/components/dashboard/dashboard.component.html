@@ -1,0 +1,66 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar  class="example-toolbar">
+      <div class="keep-icon">
+        <button class="hov" mat-icon-button (click)="snav.toggle()">
+          <mat-icon class="menu-icon">menu</mat-icon>
+        </button>
+        <img src="../../../assets/keep_2020q4_48dp.png"  height="40px" width="40px">
+        <h1 class="example-app-name">Fundoo</h1>
+      </div>
+  
+      <div class="search-box">
+        <img src="../../../assets/search_FILL0_wght400_GRAD0_opsz24.svg" />
+        <input matInput placeholder="search" />
+      </div>
+  
+      <!-- <div fxLayout="row">
+        <img mat-button class="searching" src="../../../assets/images/search_black_24dp.svg" />
+        <input fxHide.xs="true" fxHide.sm="true" fxHide.md="true" type="text" placeholder="Search"
+             class="search-box">
+    </div> -->
+  
+      <div class="right-icons">
+        <img src="../../../assets/refresh_FILL0_wght300_GRAD0_opsz24.svg" />
+        <img src="../../../assets/dns_FILL0_wght400_GRAD0_opsz24.svg" />
+        <img src="../../../assets/settings_FILL0_wght300_GRAD0_opsz24.svg" />
+      </div>
+      <div class="menu">
+        <img src="../../../assets/apps_FILL0_wght400_GRAD0_opsz48.svg" />
+        <img src="../../../assets/account_circle_FILL0_wght400_GRAD0_opsz48.png" />
+      </div> 
+    </mat-toolbar>
+  
+    <mat-sidenav-container
+      class="example-sidenav-container"
+      [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+    >
+      <mat-sidenav
+        #snav
+        [mode]="mobileQuery.matches ? 'over' : 'side'"
+        [fixedInViewport]="mobileQuery.matches"
+        fixedTopGap="56"
+      >
+        <mat-nav-list class="nav-list">
+          <a mat-list-item routerLink="notes"
+            ><img src="../../../assets/lightbulb_FILL0_wght300_GRAD0_opsz24.svg" />notes</a
+          >
+          <a mat-list-item routerLink="."
+            ><img src="../../../assets/notifications_FILL0_wght300_GRAD0_opsz24.svg" />reminder</a
+          >
+          <a mat-list-item routerLink="."
+            ><img src="../../../assets/edit_FILL0_wght300_GRAD0_opsz24.svg" />label</a
+          >
+          <a mat-list-item routerLink="."
+            ><img src="../../../assets/archive_FILL0_wght300_GRAD0_opsz24.svg" />archive</a
+          >
+          <a mat-list-item routerLink="."
+            ><img src="../../../assets/delete_FILL0_wght300_GRAD0_opsz24.svg" />trash</a
+          >
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content class="content-container">
+       <p><router-outlet></router-outlet></p>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>

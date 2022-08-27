@@ -1,0 +1,107 @@
+<div class="container">
+
+    <div class="left sub">
+        <div>
+
+            <h2>
+                <span style="color:blue">F</span>
+                <span style="color:red">U</span>
+                <span style="color:orange">N</span>
+                <span style="color:blue">D</span>
+                <span style="color:green">O</span>
+                <span style="color:red">O</span>
+            </h2>
+
+            <span style="font-size:large">
+                Create A Fundoonotes Account
+            </span>
+        </div>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="subdiv">
+                <div class="innersubdiv">
+                    <mat-form-field appearance="outline" class="inputlabel">
+                        <mat-label class="na">First name</mat-label>
+                        <input matInput formControlName="firstName" placeholder="FirstName">
+                        <mat-error class="err">Enter First name</mat-error>
+                    </mat-form-field>
+
+                </div>
+
+                <div class="innersubdiv">
+                    <mat-form-field appearance="outline" class="inputlabel">
+                        <mat-label class="label">Last name</mat-label>
+                        <input matInput formControlName="lastName" placeholder="LastName">
+                        <mat-error class="err">Enter last names</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="email">
+                <mat-form-field appearance="outline" class="em">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" placeholder="abc@gmail.com">
+                    <mat-error class="err">Enter email</mat-error>
+                    <mat-hint class="err">You can use letters, numbers & periods</mat-hint>
+                </mat-form-field>
+
+            </div>
+
+            <div class="subdiv">
+                <div class="innersubdiv">
+                    <mat-form-field appearance="outline" class="inputlabel">
+                        <mat-label class="na">Password</mat-label>
+                        <input matInput formControlName="password" type="password" placeholder="Password">
+                        <mat-error class="err">Enter Password</mat-error>
+                        <mat-hint class="err">Use 8 or more characters with a mix of letters, numbers & symbols
+                        </mat-hint>
+                    </mat-form-field>
+
+                </div>
+
+                <div class="innersubdiv">
+                    <mat-form-field appearance="outline" class="inputlabel">
+                        <mat-label class="label">Confirm password</mat-label>
+                        <input matInput type="password" formControlName="confirmPassword" placeholder="Confirm Password">
+                        <mat-error class="err">Enter Confirm Password</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="showpass">
+                <section class="example-section">
+                    <mat-checkbox color="primary" class="example-margin">Show Password</mat-checkbox>
+                </section>
+            </div>
+
+
+            <div class="bttn">
+                <div class="bttn1 btt">
+                    <section>
+                        <div class="example-button-row">
+                            <button mat-button routerLink="/login">Sign in instead</button>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="bttn2 btt">
+                    <section>
+                        <div class="example-button-row">
+
+                            <button mat-raised-button class="fullbttn">Next</button>
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="right sub">
+        <P>
+            <img src="assets/image1.svg" height="250px" width="240px" alt="logo">
+            <span>One account.<br> All of Google working for you</span>
+        </P>
+    </div>
+
+</div>
+
