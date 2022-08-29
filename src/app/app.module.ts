@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -20,6 +21,8 @@ import { LoginComponent } from './components/login/login.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TakenoteComponent } from './components/takenote/takenote.component';
+import { GetallnoteComponent } from './components/getallnote/getallnote.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     LoginComponent,
     ForgotpasswordComponent,
     ResetpasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    TakenoteComponent,
+    GetallnoteComponent
   ],
   imports: [
     BrowserModule,
