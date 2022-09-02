@@ -6,7 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { TakenoteComponent } from './components/takenote/takenote.component';
+//import { TakenoteComponent } from './components/takenote/takenote.component';
 import { GetallnoteComponent } from './components/getallnote/getallnote.component';
 
 const routes: Routes = [
@@ -21,7 +21,6 @@ const routes: Routes = [
     {path:'', redirectTo:"/dashboard/notes", pathMatch:'full' },
     {path:'notes',component:GetallnoteComponent}
 ]},
-{path:'takenote',component:TakenoteComponent}
 
 ]
 @NgModule({
