@@ -1,5 +1,8 @@
+import { trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { NoteService } from 'src/app/services/noteService/note.service';
 
 
 @Component({
@@ -8,28 +11,45 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./takenote.component.scss']
 })
 export class TakenoteComponent implements OnInit {
-  takenote!:NgForm;
+createForm!: FormGroup;
+display : boolean=true;
+submitted = false;
+token : any;
+title:string=""
+description:string=""
 
-  public notelist :boolean=false;
-  description:string = ""
-  title:string=""
-
-  constructor() { }
+  constructor(private formBuilder: FormBuilder,private note : NoteService, private activeRoute : ActivatedRoute ) { }
 
   ngOnInit(): void {
+    this.createForm = this.formBuilder.group({
+      title: ['', Validators.required],
+      description: ['', Validators.required]
+    })
+    this.token = this.activeRoute.snapshot.paramMap.get('token');
+    console.log(this.token);
   }
-  noteClick(){
-    
-    this.notelist = true
-    
-  }
-  noteClose(){
-    
-    this.notelist = false
-    console.log(this.title, this.description);
-    if((this.title==null||this.title=="") && (this.description==null||this.description=="")){
-      console.log("values are null");
+
+  onSubmit(){
+    this.submitted=true;
+    if(this.createForm.valid){
+      console.log("Note Created Successfully");
+      let reqData = {
+        Title: this.createForm.value.title,
+        Description: this.createForm.value.description,
+      }
+      console.log(reqData);
+      this.note.createnotes(reqData).subscribe((response : any) =>{
+        console.log(response);
+      });
     }
-   
+    else{
+      this.submitted=false;
+      console.log(this.title, this.description);
+      if((this.title==null || this.title=="") && (this.description==null||this.description==""))
+      {
+        console.log("Values are null");
+      }
+    }
+    this.display=true;
   }
 }
