@@ -13,6 +13,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +25,10 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TakenoteComponent } from './components/takenote/takenote.component';
+import { GetallnoteComponent } from './components/getallnote/getallnote.component';
+import { IconsComponent } from './components/icons/icons.component';
+import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
+import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +38,13 @@ import { TakenoteComponent } from './components/takenote/takenote.component';
     ForgotpasswordComponent,
     ResetpasswordComponent,
     DashboardComponent,
-    TakenoteComponent
+    TakenoteComponent,
+    GetallnoteComponent,
+    IconsComponent,
+    DisplaynotesComponent,
+    UpdatenoteComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -47,7 +60,10 @@ import { TakenoteComponent } from './components/takenote/takenote.component';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatMenuModule,
+    MatDialogModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
