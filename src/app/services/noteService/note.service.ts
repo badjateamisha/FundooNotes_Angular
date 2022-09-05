@@ -55,4 +55,16 @@ trashnotes(id:any){
   }
   return this.httpService.deleteService("deleteNotes/"+id,true,header)
   }
+
+  archiveNotes(data:any){
+
+    let headersOption = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': `Bearer  ${this.token}`		
+      })
+  
+    }
+    return this.httpService.postService("ArchieveNotesById",data,true,headersOption)
+  }
 }

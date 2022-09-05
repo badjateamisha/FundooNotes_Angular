@@ -24,6 +24,16 @@ export class IconsComponent implements OnInit {
       this.iconstodisplay.emit(res)
     
     })
+    
   }
-
+  onArchive(){
+   let reqData={
+    id:this.noteobject.id}
+    console.log(' Note Archived');
+    this.note.archiveNotes(reqData).subscribe((res:any) =>{
+      console.log(res);
+      this.iconstodisplay.emit(res)
+      
+    })
+  }
 }
