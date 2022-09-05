@@ -35,5 +35,13 @@ token:any;
 
   }
 
-  
+  updatenote(data:any,id:any){
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+        'Authorization': 'Bearer '+this.token 
+      })
+  }
+  return this.httpService.postService("updateNotes/"+id, data, true, header)
+}
 }

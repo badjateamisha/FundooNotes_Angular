@@ -28,6 +28,7 @@ import { TakenoteComponent } from './components/takenote/takenote.component';
 import { GetallnoteComponent } from './components/getallnote/getallnote.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
+import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { DisplaynotesComponent } from './components/displaynotes/displaynotes.co
     GetallnoteComponent,
     IconsComponent,
     DisplaynotesComponent,
+    UpdatenoteComponent,
     
     
   ],

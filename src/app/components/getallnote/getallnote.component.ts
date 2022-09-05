@@ -12,6 +12,7 @@ export class GetallnoteComponent implements OnInit {
   constructor(private note:NoteService) { }
 
   ngOnInit(): void {
+  
     this.getallnotes()
   }
   getallnotes(){
@@ -21,5 +22,9 @@ export class GetallnoteComponent implements OnInit {
       console.log(this.notelist);
     })
   }
+
+  updatedData($event : any) {
+    this.getallnotes();
+    }
   
 }
