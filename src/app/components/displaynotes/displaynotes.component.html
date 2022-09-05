@@ -11,7 +11,7 @@
                 <div> {{note.noteID}}</div>
             </mat-card-subtitle>
             <div class="icons">
-                <app-icons [noteobject]="note"></app-icons>
+                <app-icons [noteobject]="note" (iconstodisplay)="recievefromiconstodisplaycard($event)"></app-icons>
             </div>
         </mat-card>
     </div>

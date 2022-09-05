@@ -44,4 +44,15 @@ token:any;
   }
   return this.httpService.postService("updateNotes/"+id, data, true, header)
 }
+
+trashnotes(id:any){
+
+  let header ={
+    headers: new HttpHeaders({
+      'Content-type': 'application/json',
+        'Authorization':`Bearer  ${this.token}`
+    })
+  }
+  return this.httpService.deleteService("deleteNotes/"+id,true,header)
+  }
 }
