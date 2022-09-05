@@ -1,4 +1,4 @@
-import {  Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { COMPILER_OPTIONS, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdatenoteComponent } from '../updatenote/updatenote.component';
 
@@ -8,8 +8,11 @@ import { UpdatenoteComponent } from '../updatenote/updatenote.component';
   styleUrls: ['./displaynotes.component.scss']
 })
 export class DisplaynotesComponent implements OnInit {
+  sentmsg: any;
   @Input() childMessage: any;
   @Output() noteUpdated = new EventEmitter<any>();
+  @Output() displaytogetallnotes=new EventEmitter<string>();
+
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -25,6 +28,13 @@ export class DisplaynotesComponent implements OnInit {
      console.log('The dialog was closed'); 
       this.noteUpdated.emit(result);
      });
+     
+  }
+  recievefromiconstodisplaycard($event: any) {
+    console.log("recievedindisplay");
+    this.sentmsg = $event
+    this.displaytogetallnotes.emit(this.sentmsg)
+  
   }
  
 
