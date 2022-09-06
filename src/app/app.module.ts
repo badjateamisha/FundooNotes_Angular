@@ -31,6 +31,8 @@ import { DisplaynotesComponent } from './components/displaynotes/displaynotes.co
 import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { ArchiveComponent } from './components/archive/archive.component';
+import { AuthguardService } from './services/authguardService/authguard.service';
+
 
 @NgModule({
   declarations: [
@@ -69,7 +71,9 @@ import { ArchiveComponent } from './components/archive/archive.component';
     MatDialogModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [
+    AuthguardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

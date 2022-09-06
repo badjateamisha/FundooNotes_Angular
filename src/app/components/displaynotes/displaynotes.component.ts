@@ -31,7 +31,7 @@ export class DisplaynotesComponent implements OnInit {
      
   }
   recievefromiconstodisplaycard($event: any) {
-    console.log("recievedindisplay");
+    console.log("Recieved in Display");
     this.sentmsg = $event
     this.displaytogetallnotes.emit(this.sentmsg)
   
