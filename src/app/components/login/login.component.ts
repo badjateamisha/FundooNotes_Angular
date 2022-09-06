@@ -12,11 +12,11 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder,private user : UserService,private router : Router) { }
+  constructor(private formBuilder: FormBuilder,private user : UserService,private route : Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
@@ -30,13 +30,14 @@ export class LoginComponent implements OnInit {
     else{
       console.log("Login Successfully Completed");
       let reqData={
-        Email:this.loginForm.value.email,
-        Password:this.loginForm.value.password
+        email:this.loginForm.value.email,
+        password:this.loginForm.value.password
       }
       this.user.login(reqData).subscribe((response:any)=> {
         console.log(response);  
-        localStorage.setItem("token",response.data.token)  
-        this.router.navigateByUrl('/dashboard/notes'); 
+        localStorage.setItem("token",response.token)
+        console.log(response.token)  
+        this.route.navigateByUrl('/dashboard/notes'); 
 
       })
     }}
