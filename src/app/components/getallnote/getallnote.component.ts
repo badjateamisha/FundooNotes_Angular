@@ -23,11 +23,20 @@ export class GetallnoteComponent implements OnInit {
     })
   }
 
-  updatedData($event : any) {
-    this.getallnotes();
-    }
+  // receiveupdatedData($event:any) {
+  //   console.log("Updated notes"+$event);
+  //   this.getallnotes();
+  //   }
     receiveMessagefromdisplaycard($event: any) {
-      console.log("Inside get-all notes");
+      console.log("Inside get-all notes"+$event);
       this.getallnotes()
     } 
+    receivedRefreshEventFromDisplaytoGetall($event:any){
+      console.log("Display to GetAllNotes"+$event);
+      this.getallnotes()
+    }
+    receiverRefreshEventCreate($event:any){
+      console.log("Create to GetAllNotes"+$event);
+      this.getallnotes()
+    }
 }

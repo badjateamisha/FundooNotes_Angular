@@ -32,12 +32,14 @@ export class UpdatenoteComponent implements OnInit {
 
     this.noteService.updatenote( reqData,this.id).subscribe((response: any) => {
       console.log("Update ",response);
-      this.title=''
-      this.description=''
       this.noteUpdated.emit(response);
 
     });
     this.dialogRef.close();
    
+  }
+  receiveMessagefromdisplaycard($event: any) {
+    console.log("inside get all notes", $event);
+    this.onClose();
   }
 } 

@@ -1,11 +1,20 @@
-<div class="icongroup">
+<div >
 
     <img class="search_image" style="margin-right: 10px;
       height: 20px;" src="../../../assets/add_alert_FILL0_wght300_GRAD0_opsz24.svg">
     <img class="search_image" style="margin-right: 10px;
       height: 20px;" src="../../../assets/person_add_FILL0_wght300_GRAD0_opsz24.svg">
     <img class="search_image" style="margin-right: 10px;
-      height: 20px;" src="../../../assets/palette_FILL0_wght300_GRAD0_opsz24.svg">
+      height: 20px;" src="../../../assets/palette_FILL0_wght300_GRAD0_opsz24.svg" [matMenuTriggerFor]="aboveMenu">
+       <mat-menu #aboveMenu="matMenu" yPosition="below">
+        <div>
+          <div *ngFor='let color of colorArray'>
+            <button class="colorIcon" style="background-color:transparent;border: none;"[style.background]="color.code" (click)="setColor(color)">
+              <!-- <mat-icon c [ngStyle]="{color:color}">circle</mat-icon> -->
+            </button>
+          </div>
+        </div>
+      </mat-menu>
     <img class="search_image" style="margin-right: 10px;
       height: 20px;" src="../../../assets/image_FILL0_wght300_GRAD0_opsz24.svg">
     <img class="search_image" style="margin-right: 10px;
