@@ -1,5 +1,5 @@
 import { trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { NoteService } from 'src/app/services/noteService/note.service';
@@ -11,6 +11,7 @@ import { NoteService } from 'src/app/services/noteService/note.service';
   styleUrls: ['./takenote.component.scss']
 })
 export class TakenoteComponent implements OnInit {
+  @Output() refreshEventCreate = new EventEmitter<string>();
 createForm!: FormGroup;
 display : boolean=true;
 submitted = false;
@@ -40,6 +41,7 @@ description:string=""
       console.log(reqData);
       this.note.createnotes(reqData).subscribe((response : any) =>{
         console.log(response);
+        this.refreshEventCreate.emit(response)
       });
     }
     else{
@@ -50,6 +52,5 @@ description:string=""
         console.log("Values are null");
       }
     }
-    this.display=true;
-  }
-}
+    
+  }}

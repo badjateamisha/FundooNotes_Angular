@@ -67,4 +67,17 @@ trashnotes(id:any){
     }
     return this.httpService.postService("ArchieveNotesById",data,true,headersOption)
   }
+
+  ColorNote(data:any){
+    console.log(data.color)
+      let headersOption = {
+        headers: new HttpHeaders({
+          'Content-type': 'application/json',
+          'Authorization': `Bearer  ${this.token}`		
+        })
+    
+      }
+      return this.httpService.postService("colorNoteById",data,true,headersOption)
+      
+    }
 }
