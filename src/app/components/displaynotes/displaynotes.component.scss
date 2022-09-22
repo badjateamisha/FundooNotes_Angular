@@ -2,15 +2,22 @@
 
 .card{
     width: 244px;
-    border: 1px solid gainsboro ;
-    min-height: 70px;
+    min-height: 5px;
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 10px;
+    min-width: 100px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    margin: 10px;
+    //border: solid transparent;
+    box-shadow: none;
 }
+
 .icons{
-    height: 42%;
+    height: 50%;
     width: 100%;
     margin-top: 23%;
     margin-left: -1%;
     // visibility:hidden
 }
+

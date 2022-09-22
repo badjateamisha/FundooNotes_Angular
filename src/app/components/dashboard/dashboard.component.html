@@ -40,21 +40,23 @@
           <a mat-list-item routerLink="notes"
             ><img src="../../../assets/lightbulb_FILL0_wght300_GRAD0_opsz24.svg" />notes</a
           >
-          <a mat-list-item routerLink="."
+          <a mat-list-item routerLink="notes"
             ><img src="../../../assets/notifications_FILL0_wght300_GRAD0_opsz24.svg" />reminder</a
           >
-          <a mat-list-item routerLink="."
+          <a mat-list-item routerLink="notes"
             ><img src="../../../assets/edit_FILL0_wght300_GRAD0_opsz24.svg" />label</a
           >
-          <a mat-list-item routerLink="."
+          <a mat-list-item routerLink="archive"
             ><img src="../../../assets/archive_FILL0_wght300_GRAD0_opsz24.svg" />archive</a
           >
-          <a mat-list-item routerLink="."
+          <a mat-list-item routerLink="trash"
             ><img src="../../../assets/delete_FILL0_wght300_GRAD0_opsz24.svg" />trash</a
           >
         </mat-nav-list>
       </mat-sidenav>
   
-       <p><router-outlet></router-outlet></p>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>        </mat-sidenav-content>
+
     </mat-sidenav-container>
   </div>

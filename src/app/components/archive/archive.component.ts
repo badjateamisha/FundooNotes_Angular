@@ -26,6 +26,7 @@ export class ArchiveComponent implements OnInit {
        this.archiveList = res.filter((object: any) => {
         return object.isArchive === true;
       })
+      
      
     })
 

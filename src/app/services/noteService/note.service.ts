@@ -80,4 +80,14 @@ trashnotes(id:any){
       return this.httpService.postService("colorNoteById",data,true,headersOption)
       
     }
+
+    notePinned(reqData:any){
+      let headersOption = {
+        headers: new HttpHeaders({
+          'Content-type': 'application/json',
+          'Authorization': `Bearer ${this.token}`	
+        })
+      }
+       return this.httpService.postService("pinNotesById",reqData,true,headersOption)
+    }
 }

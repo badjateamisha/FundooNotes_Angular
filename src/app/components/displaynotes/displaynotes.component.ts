@@ -2,6 +2,7 @@ import {  Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdatenoteComponent } from '../updatenote/updatenote.component';
 import { DataService } from 'src/app/services/dataService/data.service';
+import { NoteService } from 'src/app/services/noteService/note.service';
 
 @Component({
   selector: 'app-displaynotes',
@@ -11,13 +12,14 @@ import { DataService } from 'src/app/services/dataService/data.service';
 export class DisplaynotesComponent implements OnInit {
   sentmsg: any;
   filterNote : any;
-
+  id:any;
+  @Input() noteobject:any;
   @Input() childMessage: any;
   @Output() noteUpdated = new EventEmitter<any>();
   @Output() displaytogetallnotes=new EventEmitter<string>();
 
 
-  constructor(public dialog: MatDialog,private data:DataService) { }
+  constructor(public dialog: MatDialog,private data:DataService,private note: NoteService) { }
 
   ngOnInit(): void {
     console.log(this.childMessage);
@@ -43,6 +45,13 @@ export class DisplaynotesComponent implements OnInit {
     this.displaytogetallnotes.emit(this.sentmsg)
   
   }
- 
+  
+  onPinned(note:any){
+    
+      console.log("Note Pinned Successfully");
+    this.note.notePinned(note).subscribe((response: any) => {
+       this.noteUpdated.emit(response)
+    }) 
+  }
 
 }
